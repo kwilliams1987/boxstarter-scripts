@@ -120,8 +120,9 @@ $junkApps = @(
 	"king.com.*"
 )
 
+$tempDir = "$env:APPDATA\..\Local\Temp\chocolatey"
 foreach ($app in $chocoApps) {
-	cinst $app --cacheLocation "$env:TEMP\chocolatey"
+	cinst $app --cacheLocation "$tempDir"
 }
 
 foreach ($app in $steamApps) {
