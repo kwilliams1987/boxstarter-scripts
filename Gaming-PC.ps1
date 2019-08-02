@@ -1,3 +1,9 @@
+<#
+	Semi automatic setup script for gaming rig.
+	Tasks:
+	1. Log into Battle.net when it finishes installing to allow games to install.
+#>
+
 $chocoApps = @(
 	"chocolateygui", 
 	"lastpass",
@@ -115,7 +121,7 @@ $junkApps = @(
 )
 
 foreach ($app in $chocoApps) {
-	cinst $app
+	cinst $app --cacheLocation "$env:TEMP\chocolatey"
 }
 
 foreach ($app in $steamApps) {
