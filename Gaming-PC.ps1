@@ -19,6 +19,7 @@ $chocoApps = @(
 	"geforce-experience",
 	"office365homepremium",
 	"speccy",
+	"microsoft-edge-insider"
 	"7zip"
 );
 
@@ -32,26 +33,16 @@ $steamApps = @(
 	,333950 # Medieval Engineers
 	,323190 # Frostpunk
 	,223850 # 3DMark
-	,535950 # Two Point Hospital
 );
 
 $bnetApps = @(
 	 "WoW" # World of Warcraft
 	,"Pro" # Overwatch
-)
+);
 
 $customApps = @(
-	# Edge Chromium Dev Channel
-	@{
-		packageName		= 'microsoft-edge-chromium'
-		url				= 'https://c2rsetup.officeapps.live.com/c2r/downloadEdge.aspx?ProductreleaseID=Edge&platform=Default&version=Edge&Channel=Dev&language=en&Consent=1&IID=024e931a-e3f6-5629-89cd-ca135e4f1b02'
-		softwareName	= 'Microsoft Edge Dev'
-		checksum		= '0793e3586febe8ecd3b44bfd9fd701676785628a3210e26f81fadbd2a42607b9'
-		checksumType	= 'sha256'
-		silentArgs		= '--mode unattended'
-		validExitCodes	= @(0, 3010, 1641)
-	}
-)
+
+);
 
 $junkApps = @(
 	"Microsoft.BingFinance"
@@ -118,9 +109,9 @@ $junkApps = @(
 	"XINGAG.XING"
 	"flaregamesGmbH.RoyalRevolt2"
 	"king.com.*"
-)
+);
 
-$tempDir = "$env:APPDATA\..\Local\Temp\chocolatey"
+$tempDir = "$env:TEMP\chocolatey"
 foreach ($app in $chocoApps) {
 	cinst $app --cacheLocation "$tempDir"
 }
