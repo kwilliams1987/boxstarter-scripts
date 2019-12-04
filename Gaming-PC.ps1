@@ -15,7 +15,6 @@ $chocoApps = @(
 	"playnite",
 	"intel-dsa",
 	"intel-graphics-driver",
-	"geforce-game-ready-driver",
 	"geforce-experience",
 	"office365homepremium",
 	"speccy",
@@ -112,6 +111,9 @@ $junkApps = @(
 );
 
 $tempDir = "$env:TEMP\chocolatey"
+choco feature enable -n=useRememberedArgumentsForUpgrades
+cinst geforce-game-ready-driver --package-parameters="'/dch'" --cacheLocation "$tempDir"
+
 foreach ($app in $chocoApps) {
 	cinst $app --cacheLocation "$tempDir"
 }
