@@ -1,7 +1,5 @@
 <#
-	Semi automatic setup script for gaming rig.
-	Tasks:
-	1. Log into Battle.net when it finishes installing to allow games to install.
+	Semi automatic setup script for developer workstation.
 #>
 $Boxstarter.AutoLogin = $true
 $Boxstarter.NoPassword = $false
