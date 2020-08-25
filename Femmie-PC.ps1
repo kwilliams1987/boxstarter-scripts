@@ -13,7 +13,8 @@ $chocoApps = @(
 	"discord",
 	"geforce-experience",
 	"office365homepremium",
-	"googlechrome"
+	"googlechrome",
+	"minecraft"
 );
 
 $bnetApps = @(
